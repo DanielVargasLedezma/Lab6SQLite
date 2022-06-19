@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.lab6sqlite.R
 import com.example.lab6sqlite.databinding.ActivityNavDrawBinding
+import com.example.lab6sqlite.ui.view.fragment.estudiante.EstudiantesFragment
 
 class NavDrawActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,6 +24,8 @@ class NavDrawActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         binding = ActivityNavDrawBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupToolbar()
+
         binding.apply {
             toggle = ActionBarDrawerToggle(
                 this@NavDrawActivity, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close
@@ -33,8 +36,6 @@ class NavDrawActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
 
             navView.setNavigationItemSelectedListener(this@NavDrawActivity)
         }
-
-        setupToolbar()
     }
 
     private fun setupToolbar() {
@@ -65,12 +66,6 @@ class NavDrawActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.nav_draw, menu)
-        return true
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         item.isChecked = true
 
@@ -79,6 +74,10 @@ class NavDrawActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         when (item.itemId) {
             R.id.estudiantes -> {
                 supportActionBar?.title = "Estudiantes Registrados"
+
+                replaceFragments(
+                    EstudiantesFragment.newInstance()
+                )
             }
             R.id.cursos -> {
                 supportActionBar?.title = "Cursos Registrados"

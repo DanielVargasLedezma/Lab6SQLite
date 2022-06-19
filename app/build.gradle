@@ -36,6 +36,7 @@ android {
         main {
             res {
                 srcDirs 'src\\main\\res', 'src\\main\\res\\layout\\cursos'
+                srcDirs 'src\\main\\res', 'src\\main\\res\\layout\\estudiante'
             }
         }
     }
