@@ -6,14 +6,24 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/_079310"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@drawable/_079310"
             android:supportsRtl="true"
             android:theme="@style/Theme.Lab6SQLite">
         <activity
-                android:name=".ui.MainActivity"
-                android:exported="true">
+                android:name=".ui.view.CrearUsuarioActivity"
+                android:exported="true"
+                android:theme="@style/Theme.Lab6SQLite.NoActionBar"/>
+        <activity
+                android:name=".ui.view.NavDrawActivity"
+                android:exported="true"
+                android:label="@string/title_activity_nav_draw"
+                android:theme="@style/Theme.Lab6SQLite.NoActionBar"/>
+        <activity
+                android:name=".ui.view.MainActivity"
+                android:exported="true"
+                android:theme="@style/Theme.Lab6SQLite.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
