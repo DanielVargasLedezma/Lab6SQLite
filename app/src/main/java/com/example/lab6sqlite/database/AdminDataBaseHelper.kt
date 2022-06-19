@@ -12,6 +12,11 @@ class AdminDataBaseHelper(context: Context) :
         db.execSQL(
             "CREATE TABLE $TABLE_NAME ($COL_1 TEXT PRIMARY KEY, $COL_2 TEXT)"
         )
+        db.execSQL(
+            "CREATE TABLE ${EstudianteDataBaseHelper.TABLE_NAME} (${EstudianteDataBaseHelper.COL_1} TEXT PRIMARY KEY, " +
+                    "${EstudianteDataBaseHelper.COL_2} TEXT, ${EstudianteDataBaseHelper.COL_3} TEXT, " +
+                    "${EstudianteDataBaseHelper.COL_4} INTEGER)"
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -27,9 +32,7 @@ class AdminDataBaseHelper(context: Context) :
             contentValues.put(COL_1, id)
             contentValues.put(COL_2, clave)
 
-            val response = db.insert(TABLE_NAME, null, contentValues)
-
-            return response
+            return db.insert(TABLE_NAME, null, contentValues)
         }
 
         return -1
