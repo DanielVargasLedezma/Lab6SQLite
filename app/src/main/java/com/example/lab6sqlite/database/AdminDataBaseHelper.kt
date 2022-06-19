@@ -17,6 +17,9 @@ class AdminDataBaseHelper(context: Context) :
                     "${EstudianteDataBaseHelper.COL_2} TEXT, ${EstudianteDataBaseHelper.COL_3} TEXT, " +
                     "${EstudianteDataBaseHelper.COL_4} INTEGER)"
         )
+        db.execSQL(
+                "CREATE TABLE ${CursoDataBaseHelper.TABLE_NAME} (${CursoDataBaseHelper.COL_1} TEXT PRIMARY KEY, ${CursoDataBaseHelper.COL_2} TEXT, ${CursoDataBaseHelper.COL_3} INTEGER)"
+                )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
