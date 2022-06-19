@@ -1,4 +1,4 @@
-package com.example.lab6sqlite.ui.database
+package com.example.lab6sqlite.database
 
 import android.content.ContentValues
 import android.content.Context
