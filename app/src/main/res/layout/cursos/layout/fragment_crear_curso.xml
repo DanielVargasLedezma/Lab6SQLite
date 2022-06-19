@@ -30,7 +30,7 @@
         />
 
         <EditText
-                android:id="@+id/codigo_curso"
+                android:id="@+id/id_curso"
 
                 android:background="@drawable/design"
 
@@ -59,7 +59,7 @@
         />
 
         <EditText
-                android:id="@+id/nombre_curso"
+                android:id="@+id/descripcion_curso"
 
                 android:background="@drawable/design"
 
@@ -82,7 +82,7 @@
                 tools:ignore="RtlSymmetry"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/codigo_curso"
+                app:layout_constraintTop_toBottomOf="@+id/id_curso"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
         />
@@ -112,7 +112,7 @@
                 tools:ignore="RtlSymmetry"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nombre_curso"
+                app:layout_constraintTop_toBottomOf="@+id/descripcion_curso"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
         />

@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.lab6sqlite.R
 import com.example.lab6sqlite.databinding.ActivityNavDrawBinding
+import com.example.lab6sqlite.ui.view.fragment.curso.CursosFragment
 import com.example.lab6sqlite.ui.view.fragment.estudiante.EstudiantesFragment
 
 class NavDrawActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -81,6 +82,9 @@ class NavDrawActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
             }
             R.id.cursos -> {
                 supportActionBar?.title = "Cursos Registrados"
+                replaceFragments(
+                    CursosFragment.newInstance()
+                )
             }
             R.id.logout -> {
                 finish()

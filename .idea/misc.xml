@@ -4,16 +4,29 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/drawable-v24/creditos_curso.xml" value="0.3675925925925926" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/drawable-v24/credits.xml" value="0.3675925925925926" />
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/drawable-v24/curso_icon.xml" value="0.3675925925925926" />
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/drawable-v24/hashtag.xml" value="0.3675925925925926" />
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/drawable-v24/ic_email_svgrepo_com.xml" value="0.3675925925925926" />
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/drawable-v24/name.xml" value="0.3675925925925926" />
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/drawable-v24/save_icon.xml" value="0.3675925925925926" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/activity_crear_usuario.xml" value="0.40398550724637683" />
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/activity_nav_draw.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/app_bar_nav_draw.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/curso_item.xml" value="0.33" />
         <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/cursoo_item.xml" value="0.40398550724637683" />
-        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/fragment_crear_curso.xml" value="0.40398550724637683" />
-        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/fragment_curso.xml" value="0.4005208333333333" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/fragment_crear_curso.xml" value="0.26588235294117646" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/fragment_curso.xml" value="0.1" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/fragment_cursos.xml" value="0.12234042553191489" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/fragment_editar_curso.xml" value="0.264" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/cursos/layout/fragment_estudiantes.xml" value="0.20820668693009117" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/estudiante/drawable/edad.xml" value="0.3675925925925926" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/estudiante/layout/fragment_crear_estudiante.xml" value="0.40398550724637683" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/estudiante/layout/fragment_editar_estudiante.xml" value="0.1" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/estudiante/layout/fragment_estudiante.xml" value="0.1" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/estudiante/layout/fragment_estudiantes.xml" value="0.40398550724637683" />
+        <entry key="..\:/Users/vtrej/Desktop/Moviles/Lab6SQLite/app/src/main/res/layout/fragment_editar_curso.xml" value="0.15416666666666667" />
       </map>
     </option>
   </component>

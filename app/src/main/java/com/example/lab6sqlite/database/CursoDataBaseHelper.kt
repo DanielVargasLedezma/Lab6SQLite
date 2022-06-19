@@ -13,6 +13,12 @@ class CursoDataBaseHelper (context: Context):
         db.execSQL(
             "CREATE TABLE $TABLE_NAME ($COL_1 TEXT PRIMARY KEY, $COL_2 TEXT, $COL_3 INTEGER)"
         )
+        db.execSQL(
+            "CREATE TABLE ${AdminDataBaseHelper.TABLE_NAME} (${AdminDataBaseHelper.COL_1} TEXT PRIMARY KEY, ${AdminDataBaseHelper.COL_2} TEXT)"
+        )
+        db.execSQL(
+            "CREATE TABLE ${EstudianteDataBaseHelper.TABLE_NAME} (${EstudianteDataBaseHelper.COL_1} TEXT PRIMARY KEY, ${EstudianteDataBaseHelper.COL_2} TEXT, ${EstudianteDataBaseHelper.COL_3} TEXT, ${EstudianteDataBaseHelper.COL_4} INTEGER)"
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -20,7 +26,7 @@ class CursoDataBaseHelper (context: Context):
         onCreate(db)
     }
 
-    fun insertCurso(id: String, descripcion: String, creditos: Int) {
+    fun insertCurso(id: String, descripcion: String, creditos: Int) : Long {
         val db = this.writableDatabase
 
         if (db.isOpen) {
@@ -32,6 +38,7 @@ class CursoDataBaseHelper (context: Context):
             db.insert(TABLE_NAME, null, contentValues)
             db.close()
         }
+        return -1
     }
     fun deleteCurso(id: String): Int {
         val db = this.writableDatabase
