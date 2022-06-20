@@ -1,4 +1,9 @@
 package com.example.lab6sqlite.modelo
 
 data class Curso (var id: String = "", var descripcion: String = "", var creditos: Int = 0):
-    java.io.Serializable
+    java.io.Serializable {
+
+    override fun toString(): String {
+        return "$id - $descripcion"
+    }
+}

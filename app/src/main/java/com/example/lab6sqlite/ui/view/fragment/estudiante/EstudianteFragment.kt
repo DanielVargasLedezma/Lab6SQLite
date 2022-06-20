@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import com.example.lab6sqlite.R
 import com.example.lab6sqlite.databinding.FragmentEstudianteBinding
 import com.example.lab6sqlite.modelo.Estudiante
+import com.example.lab6sqlite.ui.view.NavDrawActivity
+import com.example.lab6sqlite.ui.view.fragment.curso.CursosFragment
 
 /**
  * A simple [Fragment] subclass.
@@ -41,11 +43,22 @@ class EstudianteFragment : Fragment() {
             edadEstudiante.setText(estudianteAVer!!.edad.toString())
 
             cursos.setOnClickListener {
-                //Codigo de cargar cursos matriculados de este estudiante
+                iniciarCursosMatriculas()
             }
         }
 
         return binding.root
+    }
+
+    private fun iniciarCursosMatriculas() {
+        val fragmentTransaction = parentFragmentManager.beginTransaction()
+        (activity as NavDrawActivity).supportActionBar?.title = "Cursos Matriculados de ${estudianteAVer!!.id}"
+
+        fragmentTransaction.replace(
+            R.id.contentMain, CursosFragment.newInstance(estudianteAVer)
+        )
+
+        fragmentTransaction.commit()
     }
 
     override fun onDestroyView() {

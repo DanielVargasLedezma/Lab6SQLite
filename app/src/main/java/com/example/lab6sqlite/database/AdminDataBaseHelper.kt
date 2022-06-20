@@ -18,8 +18,16 @@ class AdminDataBaseHelper(context: Context) :
                     "${EstudianteDataBaseHelper.COL_4} INTEGER)"
         )
         db.execSQL(
-                "CREATE TABLE ${CursoDataBaseHelper.TABLE_NAME} (${CursoDataBaseHelper.COL_1} TEXT PRIMARY KEY, ${CursoDataBaseHelper.COL_2} TEXT, ${CursoDataBaseHelper.COL_3} INTEGER)"
-                )
+            "CREATE TABLE ${CursoDataBaseHelper.TABLE_NAME} (${CursoDataBaseHelper.COL_1} TEXT PRIMARY KEY, " +
+                    "${CursoDataBaseHelper.COL_2} TEXT, ${CursoDataBaseHelper.COL_3} INTEGER)"
+        )
+        db.execSQL(
+            "CREATE TABLE ${CursosDeEstudianteDataBaseHelper.TABLE_NAME} (${CursosDeEstudianteDataBaseHelper.COL_1} INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "${CursosDeEstudianteDataBaseHelper.COL_2} TEXT, ${CursosDeEstudianteDataBaseHelper.COL_3} TEXT, " +
+                    " FOREIGN KEY (${CursosDeEstudianteDataBaseHelper.COL_2}) REFERENCES ${EstudianteDataBaseHelper.TABLE_NAME}(${EstudianteDataBaseHelper.COL_1})," +
+                    " FOREIGN KEY (${CursosDeEstudianteDataBaseHelper.COL_3}) REFERENCES ${CursoDataBaseHelper.TABLE_NAME}(${CursoDataBaseHelper.COL_1})," +
+                    " UNIQUE(${CursosDeEstudianteDataBaseHelper.COL_2}, ${CursosDeEstudianteDataBaseHelper.COL_3}))"
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {

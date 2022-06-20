@@ -35,7 +35,7 @@ class EditarCursoFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            cursoVisualizar = it.getSerializable(ARG_PARAM1)  as Curso?
+            cursoVisualizar = it.getSerializable(ARG_PARAM1) as Curso?
         }
     }
 
@@ -43,8 +43,8 @@ class EditarCursoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         _binding = FragmentEditarCursoBinding.inflate(inflater, container, false)
+
         cursoDataBaseHelper = CursoDataBaseHelper(activity!!)
 
         fullInputsByDefault()
@@ -53,16 +53,22 @@ class EditarCursoFragment : Fragment() {
             insertar.setOnClickListener {
                 if (idCurso.text.isNotEmpty() && descripcionCurso.text.isNotEmpty() && creditosCurso.text.isNotEmpty()
                 ) {
-                    cursoVisualizar!!.id = idCurso.text.toString()
-                    cursoVisualizar!!.descripcion = descripcionCurso.text.toString()
-                    cursoVisualizar!!.creditos = creditosCurso.text.toString().toInt()
 
-                    val response = cursoDataBaseHelper.updateCurso(
-                        cursoVisualizar!!.id,
-                        cursoVisualizar!!.descripcion,
-                        cursoVisualizar!!.creditos
-
-                    )
+                    if (cursoDataBaseHelper.updateCurso(
+                            idCurso.text.toString(),
+                            descripcionCurso.text.toString(),
+                            creditosCurso.text.toString().toInt()
+                        )
+                    ) {
+                        iniciarCursos()
+                    } else {
+                        Toast.makeText(
+                            this@EditarCursoFragment.context,
+                            "Error al editar",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+                    }
                 } else {
                     Toast.makeText(
                         this@EditarCursoFragment.context,
@@ -76,17 +82,34 @@ class EditarCursoFragment : Fragment() {
             descartar.setOnClickListener {
                 fullInputsByDefault()
             }
+
+            goBack.setOnClickListener {
+                iniciarCursos()
+            }
         }
 
         return binding.root
     }
+
+    private fun iniciarCursos() {
+        val fragmentTransaction = parentFragmentManager.beginTransaction()
+        (activity as NavDrawActivity).supportActionBar?.title = "Cursos Registrados"
+
+        fragmentTransaction.replace(
+            R.id.contentMain, CursosFragment.newInstance()
+        )
+
+        fragmentTransaction.commit()
+    }
+
     private fun fullInputsByDefault() {
         binding.apply {
             idCurso.setText(cursoVisualizar!!.id)
             descripcionCurso.setText(cursoVisualizar!!.descripcion)
-            creditosCurso.setText(cursoVisualizar!!.creditos)
+            creditosCurso.setText(cursoVisualizar!!.creditos.toString())
         }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -97,11 +120,9 @@ class EditarCursoFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
+         * @param curso Curso a editar.
          * @return A new instance of fragment EditarCursoFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(curso: Curso) =
             EditarCursoFragment().apply {

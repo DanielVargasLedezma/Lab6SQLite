@@ -46,7 +46,7 @@ class CrearEstudianteFragment : Fragment() {
                             edadEstudiante.text.toString().toInt()
                         ) != -1L
                     ) {
-                        iniciarCursos()
+                        iniciarEstudiantes()
                     } else {
                         Toast.makeText(
                             this@CrearEstudianteFragment.context,
@@ -69,7 +69,7 @@ class CrearEstudianteFragment : Fragment() {
         return binding.root
     }
 
-    private fun iniciarCursos() {
+    private fun iniciarEstudiantes() {
         val fragmentTransaction = parentFragmentManager.beginTransaction()
         (activity as NavDrawActivity).supportActionBar?.title = "Estudiantes Registrados"
 

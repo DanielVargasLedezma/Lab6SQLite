@@ -41,7 +41,7 @@
                     android:textCursorDrawable="@null"
                     app:iconifiedByDefault="false"
                     app:queryBackground="@null"
-                    app:queryHint="Filtrar por cédula o nombre del Estudiante"
+                    app:queryHint="Filtrar por id o descripción del Curso"
 
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
